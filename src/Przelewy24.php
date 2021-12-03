@@ -60,7 +60,7 @@ class Przelewy24
      */
     public function handleWebhook(): TransactionStatusNotification
     {
-        parse_str(file_get_contents('php://input'), $data);
+        $data = $_POST;
 
         return new TransactionStatusNotification($data);
     }
